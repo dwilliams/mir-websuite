@@ -53,11 +53,20 @@ djauto = random(weights=[1,6],[spots, djauto])
 
 ### pop metadata to database w/ script ###
 # Send feedback to frontend system
+
 def extern_feedback(m)
   system("/usr/local/git/mir-websuite/scripts/lpinsert.pl "^ quote(m["artist"]) ^" "^ quote(m["album"]) ^" "^ quote(m["title"]) ^" &")
 end
+
 djauto = on_metadata( extern_feedback, djauto )
 
+### pop metadata to last.fm ###
+
+def lastfm(m)
+  lastfm.submit(user="MinesRadio", password="xxxx", m)
+end
+
+djauto = on_metadata(lastfm, djauto)
 
 ### live Show Override ###
 
@@ -77,8 +86,8 @@ sports = fallback(track_sensitive=false,
 
 output.icecast.mp3(host="localhost",
                    port=8000,
-		   password="mradiosrc",
-		   mount="/mirsports128.mp3",
+		   password="xxxx",
+		   mount="/xxxx128.mp3",
 		   bitrate=128,
 		   sports)
 
@@ -86,8 +95,8 @@ output.icecast.mp3(host="localhost",
 
 output.icecast.mp3(host="localhost",
                    port=8000,
-		   password="mradiosrc",
-		   mount="/mirsports32.mp3",
+		   password="xxxx",
+		   mount="/xxxx32.mp3",
 		   bitrate=32,
 		   samplerate=22050,
 		   stereo=false,
@@ -97,8 +106,8 @@ output.icecast.mp3(host="localhost",
 
 output.icecast.mp3(host="localhost",
                    port=8000,
-                   password="mradiosrc",
-                   mount="/mirstudioone128.mp3",
+                   password="xxxx",
+                   mount="/xxxx128.mp3",
 		   bitrate=128,
                    studioone)
 
@@ -106,8 +115,8 @@ output.icecast.mp3(host="localhost",
 
 output.icecast.mp3(host="localhost",
                    port=8000,
-                   password="mradiosrc",
-                   mount="/mirstudioone32.mp3",
+                   password="xxxx",
+                   mount="/xxxx32.mp3",
 		   bitrate=32,
 		   samplerate=22050,
 		   stereo=false,
@@ -117,8 +126,8 @@ output.icecast.mp3(host="localhost",
 
 output.icecast.mp3(host="localhost",
                    port=8000,
-                   password="mradiosrc",
-                   mount="/djauto.mp3",
+                   password="xxxx",
+                   mount="/xxxx.mp3",
 		   bitrate=128,
                    djauto)
 
