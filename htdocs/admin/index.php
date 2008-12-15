@@ -2,7 +2,7 @@
   //set base DIR of website to non-root dir
   $baseDIR = $_SERVER['DOCUMENT_ROOT'] . '/';
   //set base URL of website to non-root dir
-  $baseURL = 'http://localhost';
+  $baseURL = 'http://radio.mines.edu';
   // includes go here
   // start page session for logins
   session_start();
@@ -28,6 +28,9 @@
             <?php
               // include header for page
               include($baseDIR . 'admin/header.inc');
+
+	      // MENU HERE - for now a logout link
+	      echo '<a href="' . $baseURL . '/admin/logout.php">LOGOUT</a>';
               
               // switch for which function to include
 	      $string = explode('?', $_SERVER['REQUEST_URI'], 2);

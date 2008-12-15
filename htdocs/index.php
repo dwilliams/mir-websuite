@@ -2,7 +2,7 @@
   //set base DIR of website to non-root dir
   $baseDIR = $_SERVER['DOCUMENT_ROOT'] . '/';
   //set base URL of website to non-root dir
-  $baseURL = 'http://localhost';
+  $baseURL = 'http://radio.mines.edu';
   //open database for usage in page
   include($baseDIR . 'dbopen.inc');
   //set day for schedules (3 letter capped)
@@ -54,12 +54,19 @@
             <!-- same on all pages -->
             <div class="sidebardiv">
               <h2 class="ojheader">Now Playing:</h2>
+              <?php
+              // Perform SQL query for last played
+              $lpquery = "SELECT title, artist, album FROM lastplayed ORDER BY time DESC LIMIT 1";
+              $lp = pg_query($lpquery) or die('Query failed: ' . pg_last_error());
+              $lprow = pg_fetch_array($lp, 0);
+              echo $lprow["artist"] . '<br />' . $lprow["album"] . '<br />' $lprow["title"];
+              pg_free_result($lp);
+              ?>
             </div>
             <!-- seven pages - one for each day -->
             <!-- start off just displaying todays -->
             <div class="sidebardiv">
-              <h2 class="ojheader">Schedule:</h2>
-              <h2><?php echo date('l'); ?></h2>
+              <h2 class="ojheader">Today's Schedule:</h2>
               <!-- get schedule here -->
               <?php
               // Performing SQL query
@@ -72,7 +79,7 @@
               }
               else {
                 foreach($todayShow as $thisShow) {
-                  echo $thisShow["timestart"]." - ".$thisShow["timeend"]."<br /><a href=\"". 'get_bloginfo("url")' ."/programming/?submit=".md5(rand())."&ID=".$thisShow["ID"]."\">".stripslashes($thisShow["name"])."</a>";
+                  echo substr($thisShow["timestart"], 0, 5)." - ".substr($thisShow["timeend"], 0, 5)."<br />&nbsp;&nbsp;<a href=\"". $baseURL ."/programming/?submit=".md5(rand())."&id=".$thisShow["id"]."\">".stripslashes($thisShow["name"])."</a><br />";
                 }
               }
               // Free resultset

@@ -2,7 +2,7 @@
   // set base DIR for includes
   $baseDIR = $_SERVER['DOCUMENT_ROOT'] . '/';
   // set base URL for page
-  $baseURL = 'http://localhost';
+  $baseURL = 'http://radio.mines.edu';
   // start sessions for page
   session_start();
   // includes go here

@@ -2,7 +2,7 @@
   //set base DIR of website to non-root dir
   $baseDIR = $_SERVER['DOCUMENT_ROOT'] . '/';
   //set base URL of website to non-root dir
-  $baseURL = 'http://localhost';
+  $baseURL = 'http://radio.mines.edu';
   // includes go here
   // start page session for logins
   session_start();
@@ -22,7 +22,8 @@
         if(isset($_POST['newpassword1'], $_POST['newpassword2']) && $_POST['newpassword1'] != '' && $_POST['newpassword2'] != '') {
           //if same (retyped properly), set password
           if($_POST['newpassword1'] == $_POST['newpassword2']) {
-            $phash = md5($_POST['username']) . sha1($_POST['newpassword2']) . sha1($_POST['username'].md5($_POST['newpassword1']));
+            $phash = md5($_SESSION['username']) . sha1($_POST['newpassword2']) . sha1($_SESSION['username'].md5($_POST['newpassword1']));
+	    // TESTING TESTING TESTING
             $passwdUpdateQuery = 'UPDATE users SET password = ' . "'" . $phash . "'" . ' WHERE id = ' . $_POST['userid'];
             pg_query($passwdUpdateQuery) or die('Query failed: ' . pg_last_error());
           }
@@ -32,7 +33,7 @@
           }
         }
         //now process field changes
-        $userUpdateQuery = 'UPDATE users SET email = ' . "'" . $_POST['email'] . "'" . ', level = ' . "'" . $_POST['level'] . "'" . ' WHERE id = ' . $_POST['userid'];
+        $userUpdateQuery = 'UPDATE users SET email = ' . "'" . $_POST['email'] . "'" . ' WHERE id = ' . $_POST['userid'];
         $userDataUpdateQuery = 'UPDATE users_data SET firstname = ' . "'" . $_POST['firstname'] . "'" . ', lastname = ' . "'" . $_POST['lastname'] . "'" . ', displayname = ' . "'" . $_POST['displayname'] . "'" . ', url = ' . "'" . $_POST['url'] . "'" . ', aim = ' . "'" . $_POST['aim'] . "'" . ', description = ' . "'" . $_POST['description'] . "'" . ' WHERE userid = ' . $_POST['userid'];
         pg_query($userUpdateQuery) or die('Query failed: ' . pg_last_error());
         pg_query($userDataUpdateQuery) or die('Query failed: ' . pg_last_error());

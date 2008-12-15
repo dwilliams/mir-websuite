@@ -5,7 +5,7 @@
   $userData = pg_query($userQuery) or die('Query failed: ' . pg_last_error());
   $userLevel = pg_fetch_result($userData, 0, 'level');
 ?>
-<h1>Edit User:</h1>
+<h1>Edit Profile:</h1>
 <form method="post" action="<?php echo $baseURL; ?>/admin/formproc.php">
 <input type="hidden" name="formtype" value="editprofile">
 <input type="hidden" name="userid" value="<?php echo pg_fetch_result($userData, 0, 'id'); ?>">
@@ -22,15 +22,15 @@
 	Role:<BR />
 	<select name="level"
 <?php
-  if(pg_fetch_result($userData, 0, 'level') < 7)
+  if(pg_fetch_result($userData, 0, 'level') < 4)
 	{
 	  echo ' disabled="disabled"';
 	}
 ?>
 	>
-		<option value="10"<?php if($userLevel == 10) { echo ' selected'; } ?>>Administrator</option> <!-- level 10 -->
-		<option value="7"<?php if($userLevel == 7) { echo ' selected'; } ?>>Director</option> <!-- level 7 -->
-		<option value="5"<?php if($userLevel == 5) { echo ' selected'; } ?>>DJ</option> <!-- level 5 -->
+		<option value="8"<?php if($userLevel == 8) { echo ' selected'; } ?>>Administrator</option> <!-- level 10 -->
+		<option value="4"<?php if($userLevel == 4) { echo ' selected'; } ?>>Director</option> <!-- level 7 -->
+		<option value="2"<?php if($userLevel == 2) { echo ' selected'; } ?>>DJ</option> <!-- level 5 -->
 		<option value="1"<?php if($userLevel == 1) { echo ' selected'; } ?>>&mdash; No role for this station &mdash;</option> <!-- level 1 -->
 	</select>
 	<div style=""><!-- checkbox on right of column --></div>

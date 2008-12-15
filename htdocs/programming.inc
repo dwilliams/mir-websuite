@@ -13,8 +13,15 @@
 	    $imageURL = $baseURL . "/images/show/unknown.jpg";;
 	
     echo "<img src=\"" . $imageURL . "\" style=\"float:right; height:100px; padding: 2px 2px 2px 2px; border: solid #ffffff 1px;\" alt=\"" . $imageALT . "\" />";		
-	
-    echo "<h3><a href=\"" . $showProfile['url'] . "\">" . $showProfile['name'] . "</a></h3>";
+
+    echo "<h3 style=\"text-decoration: underline;\">";
+    if(isset($showProfile['url']))
+      echo "<a href=\"" . $showProfile['url'] . "\">";
+    echo $showProfile['name'];
+    if(isset($showProfile['url']))
+      echo "</a>";
+    echo "</h3>";
+    echo '<h2 class="ojheader">' . substr($showProfile['timestart'], 0, 5) . ' - ' . substr($showProfile['timeend'], 0, 5) . '</h2>';
     echo '<br />';
     echo '<p>' . $showProfile['description'] . '</p>';
     
