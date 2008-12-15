@@ -43,7 +43,7 @@ my $album = $ARGV[1];
 my $title = $ARGV[2];
 
 # Connect to DB
-$dbh = DBI->connect("dbi:pg:database=$dbname;host=$dbhost", $dbuser, $dbpass);
+$dbh = DBI->connect("dbi:Pg:database=$dbname;host=$dbhost", $dbuser, $dbpass);
 
 # If connected successfully
 if ($dbh) {
