@@ -24,22 +24,23 @@ my $dbtable =""; # table to insert the information into
 
 ### Functional Variables ###
 
-my $artist = $argv[0];
-my $album = $argv[1];
-my $title = $argv[2];
-
 my $dbh;
 my $sth;
 
 ### Main Program ###
 
 # check to see if there were too many or too few arguments
-if ($#argv > 2) {
+if ($#ARGV > 2) {
   die("Too many arguments");
 }
-if ($#argv < 2) {
+if ($#ARGV < 2) {
   die("Too few arguments");
 }
+
+# Parse command-line arguments
+my $artist = $ARGV[0];
+my $album = $ARGV[1];
+my $title = $ARGV[2];
 
 # Connect to DB
 $dbh = DBI->connect("dbi:pg:database=$dbname;host=$dbhost", $dbuser, $dbpass);
