@@ -131,4 +131,3 @@ output.icecast.mp3(host="localhost",
 		   bitrate=128,
                    djauto)
 
-
