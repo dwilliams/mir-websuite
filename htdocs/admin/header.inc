@@ -1,0 +1,1 @@
+<?php echo '<div id="pagetop"><h1>Mines Internet Radio</h1><h2>http://radio.mines.edu/ -- 303-273-3304 -- AIM: MinesRadio</h2></div>'; ?>

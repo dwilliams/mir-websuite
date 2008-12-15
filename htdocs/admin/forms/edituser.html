@@ -1,0 +1,77 @@
+<html>
+<head>
+	<style type="text/css" media="all">
+	fieldset {padding: 0 1em 1em 1em;}
+	</style>
+</head>
+<body>
+<h1>Edit User:</h1>
+<form>
+<table cellspacing=15>
+<tr><td valign="top">
+<fieldset>
+<legend><B>Name</B></legend>
+	<BR>Username:<BR>
+	<input type="text" size="66" name="username" value="Name Go Here" disabled="disabled"><BR>
+	Role:<BR>
+	<select name="role" disabled="disabled">
+		<option value="administrator">Administrator</option>
+		<option value="director">Director</option>
+		<option value="dj">DJ</option>
+		<option value="editor">Editor</option>
+		<option value="author">Author</option>
+		<option value="contributor">Contributor</option>
+		<option value="subscriber">Subscriber</option>
+		<option value="">&mdash; No role for this blog &mdash;</option>
+	</select><BR>
+	First Name:<BR>
+	<input type="text" size="66" name="firstname"><BR>
+	Last Name:<BR>
+	<input type="text" size="66" name="lastname"><BR>
+	Nickname:<BR>
+	<input type="text" size="66" name="nickname"><BR>
+	Display Name:<BR>
+	<select name="displayname">
+		<option value="firstlastname">1</option>
+		<option value="username">2</option>
+		<option value="nickname">3</option>
+		<option value="firstname">4</option>
+		<option value="lastname">5</option>
+		<option value="lastfirstname">6</option>
+	</select><BR>
+</fieldset>
+</td>
+<td valign="top">
+<fieldset>
+<legend><B>Contact Info</B></legend>
+	<BR>E-mail:<BR>
+	<input type="text" size="66" name="email"><BR>
+	Personal Website:<BR>
+	<input type="text" size="66" name="website"><BR>
+	AIM Username:<BR>
+	<input type="text" size="66" name="aim"><BR>
+</fieldset>
+</td></tr>
+<tr><td valign="bottom">
+<fieldset>
+<legend><B>About You</B></legend>
+	<BR>Share a little personal information for your profile.<BR>
+	<textarea name="bio" rows="6" cols="50"></textarea><BR>
+</fieldset>
+</td>
+<td valign="top">
+<fieldset>
+<legend><B>Update Password</B></legend>
+	<BR>To change your password, use both boxes and type in your new<BR>password.  Otherwise, leave both boxes blank.<BR>
+	<BR>New Password:<BR>
+	<input type="password" size="66" name="newpassword1"><BR>
+	Type It Again:<BR>
+	<input type="password" size="66" name="newpassword2"><BR>
+</fieldset>
+</td></tr>
+<tr><td colspan=2 align="right" valign="center">
+	<input type="submit" value="Update">
+</td></tr>
+</form>
+</body>
+</html>

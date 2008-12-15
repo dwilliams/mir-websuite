@@ -1,0 +1,41 @@
+<html>
+<head>
+	<style type="text/css" media="all">
+	fieldset {padding: 0 1em 1em 1em;}
+	</style>
+</head>
+<body>
+<form>
+<table cellspacing=15>
+<tr><td valign="top">
+<fieldset>
+<legend><B>Add User</B></legend>
+	<BR>Username: (required)<BR>
+	<input type="text" name="username"><BR>
+	First Name:<BR>
+	<input type="text" name="firstname"><BR>
+	Last Name:<BR>
+	<input type="text" name="lastname"><BR>
+	E-mail: (required)<BR>
+	<input type="text" name="email"><BR>
+	Personal Website:<BR>
+	<input type="text" name="website"><BR>
+	Password: (required, twice)<BR>
+	<input type="password" name="password1"><BR>
+	<input type="password" name="password2"><BR>
+	Role:<BR>
+	<select name="role">
+		<option value="administrator">Administrator</option>
+		<option value="director">Director</option>
+		<option value="dj" selected="selected">DJ</option>
+		<option value="editor">Editor</option>
+		<option value="author">Author</option>
+		<option value="contributor">Contributor</option>
+		<option value="subscriber">Subscriber</option>
+	</select><BR><BR>
+	<input type="submit" value="Add User">
+</fieldset>
+</td></tr>
+</form>
+</body>
+</html>

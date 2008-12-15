@@ -1,0 +1,153 @@
+/* Cascading Stylesheet for Mines Internet Radio */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #333333;
+  color: #ffffff;
+}
+
+body#loginbody {
+  width: 35%;
+  margin-left: 36%;  
+  margin-right: 36%;
+  padding: 0;
+  background: #ffffff;
+  color: #000000;
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0px none;
+  font-family: "Trebuchet MS", Arial, sans-serif;
+}
+/* --- Basic Styles --- */
+
+p {
+  margin: 0 0 1em;
+  padding: 0;
+  line-height: 1.2em;
+  font-size: 0.9em;
+  color: #ffffff;
+}
+
+h1 {
+  font-size: 5.0em;
+  line-height: 1.1em;
+}
+
+h2 {
+  font-size: 1.2em;
+  line-height: 1.1em;
+}
+
+h3 {
+  font-size: 1.1em;
+  line-height: 1.4em;
+}
+
+/* --- Layout --- */
+
+div#pagewhole {
+  position: relative;
+  width: 980px;
+  background: #666666;
+}
+
+div#pagetop {
+  position: relative;
+  height: 120px;
+  background: #ff9900;
+}
+
+div.menucont {
+  position: relative;
+  width: 100%;
+  height: 1.8em;
+  background: #ff9900;
+}
+
+div.menuentry {
+  float: left;
+  width: 18%;
+  height: 1.8em;
+  margin-left: .5%;
+  margin-right: .5%;
+  padding-left: .5%;
+  padding-right: .5%;
+  padding-top: 0.1em;
+  background: #666666;
+}
+
+div.container {
+  clear: both;
+}
+
+div#pagebody {
+  width: 740px;
+  float: left;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-left: 3px;
+  text-align: left;
+}
+
+div#pagesidebar {
+  float: left;
+  width: 220px;
+}
+
+div#pagebottom {
+  clear: both;
+  background: #ff9900;
+}
+
+div#loginform {
+  background: #cccccc;
+}
+
+/* --- Styling --- */
+
+.sidebardiv {
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  padding:5px;
+  border: 1px solid #ff9900;
+  text-align: left;
+}
+
+.post {
+  width: 100%;
+  margin-bottom: 5px;
+  padding:5px;
+  border: 1px solid #ff9900;
+}
+
+.footertext {
+  color: #666666;
+}
+
+.ojheader {
+  color: #ff9900;
+}
+
+A:link {
+  color: #ffffff;
+}
+
+A:visited {
+  color: #ffffff;
+}
+
+A:active {
+  color: #ffffff;
+}
+
+A:hover {
+  color: #ff9900;
+}
