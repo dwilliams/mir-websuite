@@ -136,6 +136,14 @@ div#loginform {
   color: #ff9900;
 }
 
+.minitext {
+  font-size: 0.5em;
+}
+
+.notsominitext {
+  font-size: 0.8em;
+}
+
 A:link {
   color: #ffffff;
 }

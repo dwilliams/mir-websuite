@@ -59,7 +59,9 @@
               $lpquery = "SELECT title, artist, album FROM lastplayed ORDER BY time DESC LIMIT 1";
               $lp = pg_query($lpquery) or die('Query failed: ' . pg_last_error());
               $lprow = pg_fetch_array($lp, 0);
-              echo $lprow["artist"] . '<br />' . $lprow["album"] . '<br />' . $lprow["title"];
+              echo '<div class="minitext">artist:</div><div class="notsominitext">' . $lprow["artist"] . '</div><br />';
+              echo '<div class="minitext">album:</div><div class="notsominitext">' . $lprow["album"] . '</div><br />';
+              echo '<div class="minitext">title:</div><div class="notsominitext">' . $lprow["title"] . '</div>';
               pg_free_result($lp);
               ?>
             </div>
