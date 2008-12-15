@@ -54,7 +54,8 @@ djauto = random(weights=[1,6],[spots, djauto])
 ### pop metadata to database w/ script ###
 # Send feedback to frontend system
 def extern_feedback(m)
-   system( "/usr/local/git/mir-websuite/scripts/lpinsert.pl "^ quote( m["artist"] ^" "^ m["album"] ^" "^ m["title"] ) ^" &" )
+# system( "/usr/local/git/mir-websuite/scripts/lpinsert.pl "^ quote( m["artist"] ^" "^ m["album"] ^" "^ m["title"] ) ^" &" )
+  system( "echo "^ quote( m["artist"] ^" "^ m["album"] ^" "^ m["title"] ) ^" >> /tmp/liq.log" )
 end
 djauto = on_metadata( extern_feedback, djauto )
 
