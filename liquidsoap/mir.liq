@@ -78,7 +78,7 @@ studioone = fallback(track_sensitive=false,
 # Injects Sports Broadcast overiding all others
 
 sports = fallback(track_sensitive=false,
-                   [mksafe(input.http("http://localhost:8000/sportsshow.mp3")), djauto])
+                   [input.http("http://localhost:8000/sportsshow.mp3"), djauto])
 
 ### Output Streams ###
 
