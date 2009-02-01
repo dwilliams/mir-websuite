@@ -13,9 +13,11 @@
   $lpquery = "SELECT title, artist, album FROM lastplayed ORDER BY time DESC LIMIT 1";
   $lp = pg_query($lpquery) or die('Query failed: ' . pg_last_error());
   $lprow = pg_fetch_array($lp, 0);
+  echo '<html><body>';
   echo $lprow["title"] . "<br />";
   echo $lprow["artist"] . "<br />";
   echo $lprow["album"];
+  echo '</body></html>';
   pg_free_result($lp);
   
   //tidying up after page
